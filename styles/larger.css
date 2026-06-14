@@ -1,0 +1,28 @@
+@media only screen and (min-width: 38rem) {
+    
+    header, main, nav, footer {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: .5rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .navigation {
+        display: block;
+    }
+
+    nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        text-align: center;
+        list-style: none;
+    }
+
+    nav li {
+        border: none;
+    }
+
+}

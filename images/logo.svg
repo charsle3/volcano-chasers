@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+        
+            <defs>
+                <clipPath id="clip-shape">
+                    <rect width="100%" height="100%" rx="256" ry="256" />
+                </clipPath>
+            </defs>
+        
+		<defs>
+			
+						<filter id="shadow-0" x="-200%" y="-200%" width="500%" height="500%">
+							<feDropShadow
+								dx="0.875"
+								dy="0.875"
+								stdDeviation="0.48125"
+								flood-color="#ff4040"
+								flood-opacity="0.87"
+							/>
+						</filter>
+					
+		</defs>
+        <g clip-path="url(#clip-shape)">
+            
+            <defs>
+                <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ff0d15" /><stop offset="100%" stop-color="#000000" />
+                </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#bg-grad)" />
+        
+			
+            <g transform="translate(256, 221) scale(22.857142857142858) rotate(0) translate(-7, -7)" opacity="1" filter="url(#shadow-0)">
+					<title xmlns="" stroke="#ff1d1d">streamline:volcano</title>
+<path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ff1d1d" stroke-linecap="round" stroke-linejoin="round" d="M13.45 13.45s-3.97-1.984-3.97-4.96H4.52c0 2.977-3.97 4.961-3.97 4.961m9.923-7.939a1.984 1.984 0 1 0-1.23-3.542a2.48 2.48 0 0 0-4.485 0a1.984 1.984 0 1 0-1.23 3.542m1.984-.992v3.969M8.488 4.52v3.969"/>
+				</g>
+        </g>
+    </svg>
