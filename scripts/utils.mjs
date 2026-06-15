@@ -13,7 +13,7 @@ export async function loadHeaderFooter() {
     footerElement.innerHTML = footer;
 }
 
-export function navBar() {
+export function navBar(page) {
     setTimeout(() => {
         const navButton = document.querySelector("#ham-btn");
         const navBar = document.querySelector("#nav-bar");
@@ -25,16 +25,21 @@ export function navBar() {
 
         // Make sure to change the ID's and variable names for the following code.
 
-        // const  = document.querySelector('#');
-        // const  = document.querySelector('#');
-        // const  = document.querySelector('#');
+        const current = document.querySelector('#currentE');
+        const historic = document.querySelector('#historicE');
+        const erupting = document.querySelector('#newsE');
 
-        // home.addEventListener('click', () => {
-        //     home.classList.add("current");
-        //     chamber.classList.remove("current");
-        //     final.classList.remove("current");
-        // });
-    }, 1000);
+        if (page == "current") {
+            current.classList.add("current");
+        }
+        else if (page == "historic") {
+            historic.classList.add("current");
+        }
+        else {
+            erupting.classList.add("current");
+        }
+
+    }, 500);
 }
 
 export function date() {

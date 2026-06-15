@@ -84,7 +84,7 @@ nav li:last-child {
     border: none;
 }
 
-nav li:hover {
+nav li:hover, .current {
     background-color: #b7b7b7;
 }
 
@@ -126,8 +126,19 @@ div {
     height: auto;
 }
 
-#recent p {
+#USVolcanos p {
     text-align: center;
+}
+
+#USVolcanos button {
+    margin: 0 .2rem;
+    padding: .1rem;
+}
+
+#volcanoSpotlight {
+    margin: 1rem 0;
+    border: 1px solid black;
+    min-height: 100px;
 }
 
 #newsletterForm {

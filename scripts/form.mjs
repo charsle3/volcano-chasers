@@ -4,4 +4,4 @@ import { navBar } from "./utils.mjs";
 
 loadHeaderFooter();
 date();
-navBar();
+navBar("erupting");
