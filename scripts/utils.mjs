@@ -1,9 +1,9 @@
 export async function loadHeaderFooter() {
 
-    const resHeader = await fetch("../partials/header.html");
+    const resHeader = await fetch("./partials/header.html");
     const header = await resHeader.text();
 
-    const resFooter = await fetch("../partials/footer.html");
+    const resFooter = await fetch("./partials/footer.html");
     const footer = await resFooter.text();
 
     const headerElement = document.getElementById('main-header');
