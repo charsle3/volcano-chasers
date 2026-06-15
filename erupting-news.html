@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Final Project submission for WDD330, sign up for information about global eruptions">
+<meta name="author" content="James P Kingsley">
+<title>Volcano Chasers || WDD330</title>
+
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/larger.css">
+<script type="module" src="scripts/form.mjs" ></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="icon" href="images/logo.svg">
+</head>
+
+<body>
+    <span id="main-header"></span>
+    <main id="newsletterForm">
+        <h1>Erupting News</h1>
+        <p><em>Sign up to be notified of erupting volcanos, and related news!</em></p>
+        
+        <form action="/submission.html" method="get">
+            <fieldset>
+                <legend>Required</legend>
+                <label>First Name: <input type="text" name="fname" id="fname" required></label>
+                <label>Last Name: <input type="text" name="lname" id="lname" required></label>
+                <label>Email Address: <input type="email" name="email" id="email" required></label>
+                <span>
+                    <h4>Would you like to be notified whenever a volcano erupts?</h4>
+                    <label>Yes <input type="radio" name="notify" value="Yes" id="notify-yes" required></label>
+                    <label>No <input type="radio" name="notify" value="No" id="notify-no" required></label>
+                </span>
+            </fieldset>
+            <fieldset>
+                <legend>Optional</legend>
+                <span>
+                    <h4>What aspects of volcanos are you interested in?</h4>
+                    <label>Location <input type="checkbox" name="loc" id="loc"></label>
+                    <label>Temperature <input type="checkbox" name="temp" id="temp"></label>
+                    <label>Frequency <input type="checkbox" name="freq" id="freq"></label>
+                </span>
+                <label>Your favorite Volcano? <input type="text" name="fav" id="fav"></label>
+                <label>Text Alert: <input type="tel" name="textM" id="textM" placeholder="Mobile Phone Number"></label>
+            </fieldset>
+            <input type="submit" value="Get Notified!">
+        </form>
+        <section id="vulcan">
+            <img id="frameOne" src="/images/plane-silhouette.svg" alt="Flying Airplane Animation" loading="lazy">
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+</body>
+</html>

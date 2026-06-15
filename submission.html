@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Final Project submission for WDD330, react and travel to global eruptions">
+<meta name="description" content="Final Project submission for WDD330, review submitted personal information">
 <meta name="author" content="James P Kingsley">
 <title>Volcano Chasers || WDD330</title>
 
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/larger.css">
-<script type="module" src="scripts/main.mjs" ></script>
+<script type="module" src="scripts/submission.mjs" ></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,19 +21,7 @@
 <body>
     <span id="main-header"></span>
     <main>
-        <h1>Current Eruptions</h1>
-        <div id="hero" class="twoCol">
-            <picture>
-                <source srcset="images/hero-large.webp" media="(min-width: 608px)">
-                <img src="images/hero-small.webp" alt="Erupting Volcano" width="500" height="250" loading="lazy">
-            </picture>
-        </div>
-        <div id="active">
-            <h2>Active Volcano</h2>
-        </div>
-        <div id="airport">
-            <h2>Home Airport</h2>
-        </div>
+        <div id="display" class="twoCol"></div>
     </main>
     <footer id="main-footer"></footer>
 </body>

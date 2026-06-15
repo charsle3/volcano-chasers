@@ -25,4 +25,23 @@
         border: none;
     }
 
+    /*---------main screen view grid-----------*/
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 15px;
+    }
+
+    .twoCol {
+        grid-column: 1 / 3;
+    }
+
+    #newsletterForm {
+        display: grid;
+        grid-template-areas:
+        "title title"
+        "message message"
+        "formField volcanoAnimation";
+    }
 }
