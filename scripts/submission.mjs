@@ -7,15 +7,14 @@ date();
 navBar("erupting");
 
 
-const display = document.querySelector('#display');
+const display = document.querySelector('#displaySubmission');
 
 const userInput = new URLSearchParams(window.location.search);
 
 display.innerHTML = 
     `<p>Name: ${userInput.get("fname")} ${userInput.get("lname")}</p>
     <p>Email: ${userInput.get("email")}</p>
-    <p>Notify: ${userInput.get("notify")}</p>
-    <p id="spacer"></p>`;
+    <p>Notify: ${userInput.get("notify")}</p>`;
 
 if (userInput.get("loc") || userInput.get("temp") || userInput.get("freq") || userInput.get("fav") || userInput.get("textM")) {
     display.innerHTML = display.innerHTML + `<h2>Personalization Information</h2><p>You're interested in....</p>`;
@@ -46,4 +45,19 @@ if (userInput.get("textM")) {
     const textM = document.createElement('p');
     textM.innerHTML = `We'll send you texts at: ${userInput.get("textM")}`;
     display.appendChild(textM);
+}
+
+const visitList = JSON.parse(localStorage.getItem("visit"));
+
+if (visitList) {
+
+    const visits = document.createElement('h2');
+    visits.innerHTML = `You indicated you'd like to visit. . .`;
+    display.appendChild(visits);
+
+    visitList.forEach(place => {
+        const name = document.createElement('p');
+        name.innerHTML = `${place.volcano_name}, #${place.vnum}`;
+        display.appendChild(name);
+    });
 }

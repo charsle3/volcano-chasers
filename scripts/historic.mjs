@@ -9,8 +9,7 @@ navBar("historic");
 
 async function displayVolcanos(volcanoData) {
     
-    const volcanoDisplay = document.getElementById('volcanoSelect');
-    const spotlight = document.getElementById('volcanoSpotlight');
+    const volcanoDisplay = document.getElementById('volcanoSelect');    
 
     volcanoDisplay.innerHTML = ``;
 
@@ -19,26 +18,89 @@ async function displayVolcanos(volcanoData) {
         button.innerHTML = `${volcano.volcano_name}`;
 
         button.addEventListener('click', () => {
-            spotlight.innerHTML = ``;
-
-            const name = document.createElement('p');
-            name.innerHTML = `${volcano.volcano_name}, #${volcano.vnum}`;
-
-            const boiler = document.createElement('p');
-
-            if (volcano.boilerplate) {
-                boiler.innerHTML = `${volcano.boilerplate}`;
-            }
-            else {
-                boiler.innerHTML = `No Description Provided`;
-            }
-
-            spotlight.appendChild(name);
-            spotlight.appendChild(boiler);
+            displaySpotlight(volcano);
+            localStorage.setItem("most recent", JSON.stringify(volcano));
         })
 
         volcanoDisplay.appendChild(button);
     });
+}
+
+function displaySpotlight(volcano) {
+    const spotlight = document.getElementById('volcanoSpotlight');
+    spotlight.innerHTML = ``;
+
+    const name = document.createElement('p');
+    name.innerHTML = `${volcano.volcano_name}, #${volcano.vnum}`;
+
+    const fav = document.createElement('button');
+    fav.innerHTML = `Favorite Volcano?`;
+
+    fav.addEventListener('click', () => {
+        localStorage.setItem("favorite", JSON.stringify(volcano));
+        fav.innerHTML = `Favorited!`;
+
+        setTimeout(() => {
+            fav.innerHTML = `Favorite Volcano?`;
+        }, 2000)
+    });
+
+    const visit = document.createElement('button');
+    visit.innerHTML = `Would you like to visit?`;
+
+    visit.addEventListener('click', () => {
+        let visitList = JSON.parse(localStorage.getItem("visit"));
+
+        if (!visitList) {
+            visitList = [volcano];
+        }
+        else {
+            let contains = false;
+            visitList.forEach(volcanoVisit => {if(volcano.vnum == volcanoVisit.vnum){contains = true;}});
+
+            if (!contains) {
+                visitList.push(volcano);
+            }
+        }
+        
+        localStorage.setItem("visit", JSON.stringify(visitList));
+        visit.innerHTML = `logged!`;
+
+        setTimeout(() => {
+            visit.innerHTML = `Would you like to visit?`;
+        }, 2000)
+    });
+
+    const region = document.createElement('p');
+    region.innerHTML = `${volcano.region}`;
+
+    const boiler = document.createElement('p');
+
+    if (volcano.boilerplate) {
+        boiler.innerHTML = `${volcano.boilerplate}`;
+    }
+    else {
+        boiler.innerHTML = `No Description Provided`;
+    }
+
+    const image = document.createElement('img');
+
+    if (volcano.volcano_image_url) {
+        image.setAttribute('src', volcano.volcano_image_url);
+        image.setAttribute('alt', `an image of ${volcano.volcano_name}`);
+        image.setAttribute('loading', "lazy");
+    }
+
+    const url = document.createElement('p');
+    url.innerHTML = `For more information visit ${volcano.volcano_url}`;
+
+    spotlight.appendChild(name);
+    spotlight.appendChild(region);
+    spotlight.appendChild(fav);
+    spotlight.appendChild(visit);
+    spotlight.appendChild(boiler);
+    spotlight.appendChild(image);
+    spotlight.appendChild(url);
 }
 
 function observatoryFilters(volcanoData) {
@@ -76,3 +138,9 @@ const data = await getUSVolcanos();
 displayVolcanos(data);
 
 observatoryFilters(data);
+
+const spot = JSON.parse(localStorage.getItem("most recent"))
+
+if (spot) {
+    displaySpotlight(spot);
+}

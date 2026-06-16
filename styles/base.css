@@ -126,6 +126,35 @@ div {
     height: auto;
 }
 
+#active section {
+    margin: 1rem 0;
+    border: 1px solid black;
+    padding: .5rem;
+    border-radius: 10px;
+    background-color: #fccdcd;
+}
+
+.YELLOW {
+    animation: yellowa 5s alternate 0s infinite forwards;
+}
+
+.ORANGE {
+    animation: orangea 5s alternate 0s infinite forwards;
+}
+
+.RED {
+    animation: reda 5s alternate 0s infinite forwards;
+}
+
+#favVolcano {
+    text-align: center;
+}
+
+#favVolcano img {
+    width: 80%;
+    height: auto;
+}
+
 #USVolcanos p {
     text-align: center;
 }
@@ -139,6 +168,11 @@ div {
     margin: 1rem 0;
     border: 1px solid black;
     min-height: 100px;
+}
+
+#volcanoSpotlight img {
+    width: 80%;
+    height: auto;
 }
 
 #newsletterForm {
@@ -195,12 +229,12 @@ input[type="submit"] {
     background-color: var(--primary-background);
 }
 
-#display {
+#displaySubmission {
     text-align: center;
 }
 
-#spacer {
-    padding-bottom: 2rem;
+#displaySubmission h2 {
+    margin: .5rem 0;
 }
 
 #vulcan {
@@ -221,3 +255,17 @@ input[type="submit"] {
     to {top: 0px;}
 }
 
+@keyframes yellowa {
+    0% {background-color: #fccdcd;}
+    50% {background-color: #fcfccd;}
+}
+
+@keyframes orangea {
+    0% {background-color: #fccdcd;}
+    50% {background-color: #ffd9ab;}
+}
+
+@keyframes reda {
+    0% {background-color: #fccdcd;}
+    50% {background-color: #ff9292;}
+}
