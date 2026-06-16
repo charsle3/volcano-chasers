@@ -54,6 +54,12 @@ function displayElevated(data) {
             active.appendChild(card);
         });
     }
+    else {
+        const quiet = document.createElement('p');
+        quiet.innerHTML = `No pending eruptions detected`;
+
+        active.appendChild(quiet);
+    }
 
     
 }
